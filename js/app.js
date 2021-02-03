@@ -4,7 +4,6 @@ import whatInput from 'what-input';
 window.$ = $;
 
 // import "bootstrap";              //import all bootstrap js modules
-
 import Alert from 'bootstrap/js/dist/alert';
 import Button from 'bootstrap/js/dist/button';
 import Carousel from 'bootstrap/js/dist/carousel';
@@ -17,8 +16,4 @@ import Tab from 'bootstrap/js/dist/tab';
 import Toast from 'bootstrap/js/dist/toast';
 import Tooltip from 'bootstrap/js/dist/tooltip';
 
-// If you want to pick and choose which modules to include, comment out the above and uncomment
-// the line below
-//import './lib/foundation-explicit-pieces';
-
-// $(document).foundation();
+import './custom';

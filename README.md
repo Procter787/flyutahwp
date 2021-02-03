@@ -25,7 +25,7 @@ To start using all the tools that come with EpicPress  you need to install the n
 $ npm install
 ```
 
-### Available CLI commands
+### Available NPM commands
 
 - `npm run build` : compiles and minifies all CSS, JS, and images into the dist folder
 - `npm start` : watches all SASS files and recompiles them to css when they change.
