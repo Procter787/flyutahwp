@@ -21,7 +21,15 @@ if( function_exists('acf_add_options_page') ) {
 add_filter('wpcf7_autop_or_not', '__return_false');
 remove_filter ('acf_the_content', 'wpautop');
 
-
+/*********************************************************************
+ * Register Nav Menus
+ **********************************************************************/
+register_nav_menus(
+	array(
+		'Main' => __( 'Main Menu', 'epicpress' ),
+		//'footer' => __( 'Footer Menu', 'epicpress' ),
+	)
+);
 
 /***********************************************************************
  * Async load option in enqueue-scripts (allows a user to put "#asyncload" to async a JS file)
@@ -94,11 +102,11 @@ function my_login_logo() {
            background-color: #fff;
         }
         #login h1 a, .login h1 a {
-            background-image: url('<?php //echo $logo['sizes']['large']; ?>');
-            padding-bottom: 50px;
+            /* background-image: url('<?php //echo $logo['sizes']['large']; ?>'); */
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/WordPress_blue_logo.svg/1024px-WordPress_blue_logo.svg.png');
+            padding-bottom: 10px;
             width: 300px;
-            height: auto;
-            background-size: 300px;
+            height: 100px;
         }    
         #login .submit .button-primary{
             background-color: #aaa;

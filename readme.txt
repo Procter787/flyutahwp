@@ -1,6 +1,6 @@
 === EpicPress ===
 
-Contributors: automattic
+Contributors: Epic Marketing
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 Requires at least: 4.5
@@ -26,7 +26,7 @@ Description
 
 = Does this theme support any plugins? =
 
-EpicPress includes support for WooCommerce and for Infinite Scroll in Jetpack.
+EpicPress includes support for Advanced Custom Fields Pro.
 
 == Changelog ==
 
