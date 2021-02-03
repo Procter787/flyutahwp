@@ -1,5 +1,15 @@
 body, html{
-    overflow-x: hidden;
+    //overflow-x: hidden;
 }
 .grecaptcha-badge { visibility: hidden; }
 .row .row{ width: 100%; }
+
+.container{
+    padding: 0 map-get($grid-container-padding, "sm");
+    @include media-breakpoint-up(md) {
+        padding: 0 map-get($grid-container-padding, "md");
+    }
+    @include media-breakpoint-up(lg) {
+        padding: 0 map-get($grid-container-padding, "lg");
+    }
+}

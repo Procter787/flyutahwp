@@ -26,34 +26,40 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'epicpress' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$epicpress_description = get_bloginfo( 'description', 'display' );
-			if ( $epicpress_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $epicpress_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'epicpress' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+		<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-primary" aria-labelledby="main-nav-label">
+			<h2 id="main-nav-label" class="sr-only">
+				<?php esc_html_e( 'Main Navigation'); ?>
+			</h2>
+
+			<div class="navbar-container d-lg-flex w-100">
+				<div class="navbar-left d-flex justify-content-between">			
+					<a class="navbar-brand text-center" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url">
+						EpicPress
+					</a>	
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					  <span class="navbar-toggler-icon"></span>
+					</button>			
+				</div>
+		
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<!-- The WordPress Menu goes here -->
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location'  => 'primary',
+							'container_class' => 'navbar-container toggle-offcanvas',
+							'container_id'    => 'navbarNavDropdown',
+							'menu_class'      => 'navbar-nav ml-auto',
+							'fallback_cb'     => '',
+							'menu_id'         => 'primary',
+							'depth'           => 2,
+							'walker'          => new EpicPress_WP_Bootstrap_Navwalker(),
+						)
+					);
+					?>
+				</div>	
+			</div>
+		</nav>
+		
 	</header><!-- #masthead -->

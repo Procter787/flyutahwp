@@ -3,30 +3,32 @@
  * The template for displaying the footer
  *
  * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package EpicPress
  */
 
 ?>
+<footer class="site-footer container bg-secondary text-white py-20">
+	<div class="row">
+		<div class="col-12 col-md-3 offset-md-3">
+			EpicPress 
+			<?php $year = date('Y');
+			$copyright_text = str_replace('[year]',$year, '&copy; [year]'); 
+			echo $copyright_text; ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'epicpress' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'epicpress' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'epicpress' ), 'epicpress', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+		</div>
+		<div class="col-12 col-md-3">
+			Created by Epic Marketing
+			<a class="text-white" href="https://twitter.com/epicmarketing"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+			<a class="text-white" href="https://www.facebook.com/epicmarketingutah"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			<a class="text-white" href="https://www.instagram.com/epic.marketing/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+			<a class="text-white" href="https://www.linkedin.com/company/epic-marketing"><i class="fa fa-linkedin" aria-hidden="true"></i></a>				
+		</div>
+	</div>
+</footer>
+
+	
+	
+	
+</div><!--DO NOT REMOVE end #page -->
 
 <?php wp_footer(); ?>
 

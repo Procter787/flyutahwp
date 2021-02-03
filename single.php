@@ -15,9 +15,19 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
-
+ ?>
+			 <div class="entry-content">
+					<?php the_excerpt(); ?>
+					<?php
+					wp_link_pages(
+						array(
+							'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
+							'after'  => '</div>',
+						)
+					);
+					?>
+			</div>
+	<?php
 			the_post_navigation(
 				array(
 					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'epicpress' ) . '</span> <span class="nav-title">%title</span>',

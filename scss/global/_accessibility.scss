@@ -1,3 +1,10 @@
+[data-whatinput="mouse"], [data-whatinput="touch"]{
+     a:focus, button:focus, input:focus, .btn:focus, .btn.focus,
+     .no-focus {
+      outline: 0;
+      box-shadow: none;
+    }
+}
 
 // Text meant only for screen readers. Addresses part of theme-check issue #840.
 // https://github.com/Automattic/_s/blob/master/style.css

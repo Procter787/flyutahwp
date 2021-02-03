@@ -1,12 +1,12 @@
-@import "settings";  // <-------- Add your variables into this file. Also add variables to overwrite Bootstrap or UnderStrap variables here
-// @import "assets/bootstrap4";      // <-------- Loads Bootstrap4
-// @import "understrap/understrap";  // <-------- Loads the UnderStrap defaults. Just a few classes to incorporate BS in WP
-// @import "understrap/woocommerce"; // <-------- Loads WooCommerce style fixes. Comment out if you aren't using WooCommerce
-// 
-// @import "assets/font-awesome";    // <-------- Font Awesome Icon font
+@import "settings";  
+@import "bootstrap-components";
+@import "font-awesome";
+
 
 // Global
 @import "global/global"; 
+@import "global/accessibility"; 
+@import "global/mixins"; 
 
 //Modules
 @import "modules/footer"; 
