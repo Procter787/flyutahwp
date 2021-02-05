@@ -1,21 +1,21 @@
 <?php
 
-/** Implement the Custom Header feature. **/
+/** Basic theme setup and support. **/
 require get_template_directory() . '/inc/theme-setup.php';
 
-/** Implement the Custom Header feature. **/
+/** Script and Stylesheets **/
 require get_template_directory() . '/inc/enqueue.php';
 
-/** Implement the Custom Header feature. **/
+/** Coverts Wordpress menu to Bootstrap menu. **/
 require get_template_directory() . '/inc/class-wp-bootstrap-walker.php';
 
-/** Implement the Custom Header feature. **/
+/** Site General Function. Add your functions here **/
 require get_template_directory() . '/inc/site-functions.php';
 
-/** Implement the Custom Header feature. **/
+/** Site General Settings. Add various php code here **/
 require get_template_directory() . '/inc/site-settings.php';
 
-/** Implement the Custom Header feature. **/
+/** Custom Post Type declarations. **/
 require get_template_directory() . '/inc/site-cpt.php';
 
 
