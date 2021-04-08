@@ -24,7 +24,7 @@ get_header();
 		
 		<?php 
 		//Display all Flexible Content
-		get_template_part( 'global-templates/flexible-content' ); 
+		get_template_part( 'template-parts/flexible-content' ); 
 		?>
 	</main>
 fffdsfd
