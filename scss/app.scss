@@ -4,9 +4,9 @@
 
 
 // Global
+@import "global/mixins"; 
 @import "global/global"; 
 @import "global/accessibility"; 
-@import "global/mixins"; 
 
 //Modules
 @import "modules/footer"; 
