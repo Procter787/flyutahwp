@@ -13,3 +13,6 @@ body, html{
         padding: 0 map-get($grid-container-padding, "lg");
     }
 }
+.relative{
+    position: relative;
+}
