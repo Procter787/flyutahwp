@@ -33,7 +33,8 @@ $ npm install
 
 ### ACF Custom Button Field
 
-To start using the ACF Field **Custom Button** follow these steps:
+To start using the ACF Field **Custom Button** follow these steps: 
+
 1. Add a sites button colors by going to WP Admin Bar -> Custom Fields -> Button Options
     This will add these as options to the Button Style field
 2. Add the corresponding button classes and styles to _global.scss
