@@ -24,9 +24,11 @@
 		</div>
 	</div>
 </footer>
+</div>
 
-	
-	
+<!-- DO NOT REMOVE  -->
+<!-- Used in JS to determine current breakpoint size -->
+<div class="device-sm d-md-none"></div><div class="device-md d-none d-md-block d-lg-none"></div><div class="device-lg d-none d-lg-block"></div>
 	
 </div><!--DO NOT REMOVE end #page -->
 
