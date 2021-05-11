@@ -52,7 +52,7 @@ class epic_acf_field_custom_button extends acf_field {
 		*/
 		
 		$this->defaults = array(
-			//'button_options'	=> 14,
+			//'button_colors'	=> '',			
 		);
 		
 		
@@ -104,13 +104,12 @@ class epic_acf_field_custom_button extends acf_field {
 		*  Please note that you must also have a matching $defaults value for the field name (font_size)
 		*/
 		
-		// acf_render_field_setting( $field, array(
-		// 	'label'			=> __('Button Options','acf-custom-button-field'),
-		// 	'instructions'	=> __('Customise what options this field offers','acf-custom-button-field'),
-		// 	'type'			=> 'checkbox',
-		// 	'name'			=> 'button_options',
-		// 	'choices'		=> 'choice1, choice2',
-		// ));
+		acf_render_field_setting( $field, array(
+			'label'			=> __('Button Colors','acf-custom-button-field'),
+			'type'			=> 'message',
+			'name'			=> 'button_colors',
+			'message'		=> 'Button Colors are set on the Custom Fields -> Button Options page',
+		));
 
 	}
 	
