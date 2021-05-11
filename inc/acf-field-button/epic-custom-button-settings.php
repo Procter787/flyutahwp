@@ -61,15 +61,13 @@ function acf_button_register_setting(){
  
 }
  
-function acf_button_text_field_html(){
- 
-	$text = get_option( 'button_colors' );
- 
+function acf_button_text_field_html(){ 
+	$text = get_option( 'button_colors' ) ?: 'blue';
+
 	printf(
-		'<input type="text" id="button_colors" name="button_colors" value="%s" placeholder="white,blue,red-outline" />',
+		'<input type="text" id="button_colors" name="button_colors" value="%s" placeholder="blue, red-outline" />',
 		esc_attr( $text )
-	);
- 
+	); 
 }
 
 
