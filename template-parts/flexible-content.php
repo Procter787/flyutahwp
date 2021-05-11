@@ -11,8 +11,11 @@
                 $flex_count = get_row_index();
                 get_template_part( 'template-parts/hero-banner' );
                 
-                if( get_row_layout() == 'wysiwyg_editor' ): 
-                    echo 'test';
+                
+                //Example of how to print off Custom Button
+                if( get_row_layout() == 'example_button' ):                     
+                    $test_button = get_sub_field('custom_button');
+                    print_button($test_button); 
                 endif;
             ?>
             

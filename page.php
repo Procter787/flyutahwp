@@ -20,13 +20,13 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 		endwhile; 
-		?>
-		
+		?>		
+				
 		<?php 
 		//Display all Flexible Content
 		get_template_part( 'template-parts/flexible-content' ); 
 		?>
 	</main>
-fffdsfd
+
 <?php
 get_footer();
