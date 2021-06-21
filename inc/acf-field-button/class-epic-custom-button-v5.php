@@ -130,8 +130,7 @@ class epic_acf_field_custom_button extends acf_field {
 	*  @return	n/a
 	*/
 	
-	function render_field( $field ) {
-		//echo "<pre>Debug: ".print_r($field,1)."</pre>";?>		        
+	function render_field( $field ) {?>		        
         
         <div class="acf-fields">
 	        <?php // Button Type ?>
@@ -287,7 +286,6 @@ class epic_acf_field_custom_button extends acf_field {
 		// vars
 		$url = $this->settings['url'];
 		$version = $this->settings['version'];
-		echo "<pre>Debug: ".print_r($url,1)."</pre>";
 		
 		// register & include JS
 		wp_register_script('acf-custom-button-field', "{$url}/inc/acf-field-button/input.js", array('acf-input'), $version);
