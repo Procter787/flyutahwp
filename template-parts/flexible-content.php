@@ -9,7 +9,7 @@
         <?php while ( have_rows('flexible_content') ) : the_row(); ?>
             <?php 
                 $flex_count = get_row_index();
-                get_template_part( 'template-parts/hero-banner' );
+                get_template_part( 'template-parts/customization-block' );
                 
                 
                 //Example of how to print off Custom Button

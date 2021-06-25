@@ -35,4 +35,15 @@ $(document).ready(function() {
     function isBreakpoint(alias) {
         return $('.device-' + alias).is(':visible');
     }
+    
+    //Lazy Load Video
+    $('.video-wrapper .video-placeholder').on('click', function(){
+          $(this).addClass('d-none');
+          var video = $(this).siblings('video');
+          var vidSrc = video.data('video_src')
+          video.children('source').attr('src', vidSrc);
+          video[0].load();
+          video.removeClass('d-none');
+          video.get(0).play();
+      })
 });

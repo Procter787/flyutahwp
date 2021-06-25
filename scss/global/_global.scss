@@ -16,3 +16,20 @@ body, html{
 .relative{
     position: relative;
 }
+img{
+    object-fit: cover;
+    width: 100%;
+}
+video{
+    width: 100%;
+}
+.background-black{
+    background-color: $black;
+}
+.background-grey{
+    background-color: grey;
+}
+.background-image{
+    background-size: cover;
+    background-position: center;
+}
