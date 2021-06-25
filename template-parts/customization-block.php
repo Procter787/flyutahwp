@@ -106,7 +106,7 @@
                      
                      <?php //Image gif
                      if($type == 'image-gif'):                         
-                         $sm_order = $total_blocks > 0 ? 'order-sm-1' : ''?>
+                         $sm_order = $total_blocks > 0 ? 'order-sm-only-1' : ''?>
                          <div class="<?php echo $column_size_mobile . ' ' . $column_size_desktop . ' ' . $sm_order ?> d-flex justify-content-center align-self-center mb-10 mb-lg-0">
                              <div class="block <?php echo $type ?>-block">
                                  <?php $image = get_sub_field('image_gif'); ?> 
@@ -119,7 +119,7 @@
                      
                      <?php //Video
                      if($type == 'video'): 
-                         $sm_order = $total_blocks > 0 ? 'order-sm-1' : ''?>
+                         $sm_order = $total_blocks > 0 ? 'order-sm-only-1' : ''?>
                          <div class="<?php echo $column_size_mobile . ' ' . $column_size_desktop . ' ' . $sm_order ?> align-self-center">
                              <div class="block <?php echo $type ?>-block relative h-100">
                                  
