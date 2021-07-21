@@ -32,6 +32,7 @@
 	
 </div><!--DO NOT REMOVE end #page -->
 
+<?php unsupported_browser_modal(); ?>
 <?php wp_footer(); ?>
 
 </body>
