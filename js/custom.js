@@ -35,6 +35,10 @@ $(document).ready(function() {
     function isBreakpoint(alias) {
         return $('.device-' + alias).is(':visible');
     }
+    if(window.msCrypto && $('#unsupported-browser').length > 0) {	//if IE11 only
+        $('#unsupported-browser').modal('show');
+	}
+
     
     //Lazy Load Video
     $('.video-wrapper .video-placeholder').on('click', function(){
