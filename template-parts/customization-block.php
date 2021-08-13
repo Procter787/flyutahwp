@@ -74,7 +74,6 @@
                          $button = get_sub_field('buttons');
                          $text_center = $total_blocks == 1 ? 'text-center' : '';
                          $sm_order = $total_blocks > 0 ? 'order-sm-only-2' : '';
-                         $paragraph_lg_size = $total_blocks > 1 ? 'col-lg-12' : 'col-lg-10 offset-lg-1 mr-auto';
                          ?>
                          <div class="<?php echo $column_size_mobile . ' ' . $column_size_desktop . ' ' . $sm_order . ' ' . $text_center?> align-self-center">
                               <div class="block <?php echo $type ?>-block">

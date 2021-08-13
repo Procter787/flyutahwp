@@ -130,7 +130,8 @@ class epic_acf_field_custom_button extends acf_field {
 	*  @return	n/a
 	*/
 	
-	function render_field( $field ) {?>		        
+	function render_field( $field ) {
+		$field_value = $field['value']?>		        
         
         <div class="acf-fields">
 	        <?php // Button Type ?>
@@ -140,14 +141,14 @@ class epic_acf_field_custom_button extends acf_field {
 	            </div>
 	            <div class="acf-input">
 	                <div class="acf-button-group">                    
-	                    <label class="<?php echo ($field['value']['button_type'] == 'internal_link'  || empty($field['value']['button_type']) ? 'selected' : '') ?>">
-	                        <input type="radio" name="<?php echo $field['name'].'[button_type]' ?>" value="internal_link" <?php echo ($field['value']['button_type'] == 'internal_link' || empty($field['value']['button-type'])  ? 'checked' : '') ?>> Internal Link
+	                    <label class="<?php echo (!empty($field_value) && ($field_value['button_type'] == 'internal_link')  || empty($field_value['button_type']) ) ? 'selected' : '' ?>">
+	                        <input type="radio" name="<?php echo $field['name'].'[button_type]' ?>" value="internal_link" <?php echo (!empty($field_value) && $field_value['button_type'] == 'internal_link' || empty($field_value['button-type'])  ? 'checked' : '') ?>> Internal Link
 	                    </label>
-	                    <label class="<?php echo ($field['value']['button_type'] == 'external_link' ? 'selected' : '') ?>">
-	                        <input type="radio" name="<?php echo $field['name'].'[button_type]' ?>" value="external_link" <?php echo ($field['value']['button_type'] == 'external_link' ? 'checked' : '') ?>> External Link
+	                    <label class="<?php echo (!empty($field_value) && $field_value['button_type'] == 'external_link' ? 'selected' : '') ?>">
+	                        <input type="radio" name="<?php echo $field['name'].'[button_type]' ?>" value="external_link" <?php echo (!empty($field_value) && $field_value['button_type'] == 'external_link' ? 'checked' : '') ?>> External Link
 	                    </label>
-	                    <label class="<?php echo ($field['value']['button_type'] == 'open_modal' ? 'selected' : '') ?>">
-	                        <input type="radio" name="<?php echo $field['name'].'[button_type]' ?>" value="open_modal" <?php echo ($field['value']['button_type'] == 'open_modal' ? 'checked' : '') ?>> Open Modal
+	                    <label class="<?php echo (!empty($field_value) && $field_value['button_type'] == 'open_modal' ? 'selected' : '') ?>">
+	                        <input type="radio" name="<?php echo $field['name'].'[button_type]' ?>" value="open_modal" <?php echo (!empty($field_value) && $field_value['button_type'] == 'open_modal' ? 'checked' : '') ?>> Open Modal
 	                    </label>
 	                </div>
 	            </div>
@@ -163,7 +164,7 @@ class epic_acf_field_custom_button extends acf_field {
 						<input type="hidden" name="<?php echo $field['name'].'[open_in_a_new_window]' ?>" value="0">	
 						<label>
 							<input type="checkbox" id="<?php echo $field['name'].'[open_in_a_new_window]' ?>" name="<?php echo $field['name'].'[open_in_a_new_window]' ?>" class="" autocomplete="off"
-							<?php echo esc_attr(( !empty($field['value']['open_in_a_new_window']) ? 'checked' : '' )) ?>>
+							<?php echo esc_attr(( !empty($field_value) && !empty($field_value['open_in_a_new_window']) ? 'checked' : '' )) ?>>
 						</label>
 					</div>
 				</div>				
@@ -183,20 +184,20 @@ class epic_acf_field_custom_button extends acf_field {
 	                <ul class="acf-radio-list acf-bl" data-allow_null="0" data-other_choice="0">
 	                    <?php if(!empty($button_colors_array)): foreach($button_colors_array as $key=>$button_color):
 	                        $button_color_title = ucwords(str_replace("-"," ",$button_color));
-							$select_default = $key == 0 && empty($field['value']['button_style']);
+							$select_default = $key == 0 && empty($field_value['button_style']);
 							?>
 	                        <li>
-	                            <label class="<?php echo ($field['value']['button_style'] == $button_color || $select_default ? 'selected' : '') ?>">
+	                            <label class="<?php echo (!empty($field_value) && $field_value['button_style'] == $button_color || $select_default ? 'selected' : '') ?>">
 	                                <input type="radio" id="<?php echo $field['id'] . '-' . $button_color ?>" name="<?php echo $field['name'] .'[button_style]' ?>" value="<?php echo $button_color ?>" 
-	                                    <?php echo ($field['value']['button_style'] == $button_color || $select_default ? 'checked' : '') ?>>
+	                                    <?php echo (!empty($field_value) && $field_value['button_style'] == $button_color || $select_default ? 'checked' : '') ?>>
 	                                <?php echo $button_color_title ?> 
 	                            </label>
 	                        </li>
 	                    <?php endforeach; endif; ?>    
 						<li>
-							<label class="<?php echo ($field['value']['button_style'] == 'plain-text-link' ? 'selected' : '') ?>">
+							<label class="<?php echo (!empty($field_value) && $field_value['button_style'] == 'plain-text-link' ? 'selected' : '') ?>">
 								<input type="radio" id="<?php echo $field['id'] . '-plain-text-link' ?>" name="<?php echo $field['name'] .'[button_style]' ?>" value="plain-text-link" 
-									<?php echo ($field['value']['button_style'] == 'plain-text-link' || $select_default ? 'checked' : '') ?>>
+									<?php echo (!empty($field_value) && $field_value['button_style'] == 'plain-text-link' || $select_default ? 'checked' : '') ?>>
 								Plain Text Link
 							</label>
 						</li>                
@@ -214,7 +215,7 @@ class epic_acf_field_custom_button extends acf_field {
 	            <div class="acf-input">
 	                <div class="acf-input-wrap">
 	                    <input type="text" id="<?php echo $field['id'].'-button-text' ?>" name="<?php echo $field['name'] .'[button_text]' ?>"
-	                    value="<?php echo esc_attr(( $field['value']['button_text'] ?? $field['button_text'] )) ?>" >
+	                    value="<?php echo esc_attr(( !empty($field_value) && $field_value['button_text'] ?? $field['button_text'] )) ?>" >
 	                </div>
 	            </div>
 	        </div>
@@ -227,8 +228,8 @@ class epic_acf_field_custom_button extends acf_field {
 	            <div class="acf-input">
 	                <input type="hidden" id="<?php echo $field['id'].'-button-link' ?>" name="<?php echo $field['name'] .'[internal_link]' ?>">
 	                <select id="<?php echo $field['id'].'-internal-link' ?>" class="select2-hidden-accessible" name="<?php echo $field['name'] .'[internal_link]' ?>" data-ui="1" data-multiple="0" data-placeholder="Select" data-allow_null="0" tabindex="-1" aria-hidden="true" data-ajax="1">
-						<?php if(!empty($field['value']['internal_link'])): ?>
-							<option value="<?php echo $field['value']['internal_link'] ?>" selected="selected" data-i="0"><?php echo get_the_title($field['value']['internal_link']) ?></option>
+						<?php if(!empty($field_value) && !empty($field_value['internal_link'])): ?>
+							<option value="<?php echo $field_value['internal_link'] ?? ''?>" selected="selected" data-i="0"><?php echo get_the_title($field_value['internal_link']) ?></option>
 						<?php endif; ?>
 	                </select>				
 	            </div>
@@ -242,7 +243,7 @@ class epic_acf_field_custom_button extends acf_field {
 					<div class="acf-input-wrap acf-url">
 						<i class="acf-icon -globe -small"></i>
 						<input type="url" id="<?php echo $field['id'].'-external-link' ?>" name="<?php echo $field['name'] .'[external_link]' ?>"
-						value="<?php echo esc_attr(( $field['value']['external_link'] ?? $field['external_link'] )) ?>" >
+						value="<?php echo esc_attr(( $field_value['external_link'] ?? $field['external_link'] ?? '')) ?>" >
 					</div>
 				</div>
 	        </div>
@@ -255,7 +256,7 @@ class epic_acf_field_custom_button extends acf_field {
 					<div class="acf-input-prepend">#</div>
 					<div class="acf-input-wrap">
 						<input type="text" id="<?php echo $field['id'].'-modal-id' ?>" name="<?php echo $field['name'] .'[modal_id]' ?>"
-						value="<?php echo esc_attr(( $field['value']['modal_id'] ?? $field['modal_id'] )) ?>" >
+						value="<?php echo esc_attr(( $field_value['modal_id'] ?? $field['modal_id'] ?? '' )) ?>" >
 					</div>
 				</div>
 	        </div>
