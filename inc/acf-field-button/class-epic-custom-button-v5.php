@@ -215,7 +215,7 @@ class epic_acf_field_custom_button extends acf_field {
 	            <div class="acf-input">
 	                <div class="acf-input-wrap">
 	                    <input type="text" id="<?php echo $field['id'].'-button-text' ?>" name="<?php echo $field['name'] .'[button_text]' ?>"
-	                    value="<?php echo esc_attr(( !empty($field_value) && $field_value['button_text'] ?? $field['button_text'] )) ?>" >
+						value="<?php echo esc_attr( $field_value['button_text'] ?? $field['button_text'] ?? '' ) ?>" >
 	                </div>
 	            </div>
 	        </div>
