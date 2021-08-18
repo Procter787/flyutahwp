@@ -72,10 +72,10 @@
                          $paragraph = get_sub_field('paragraph');
                          $heading_size = $heading_group['heading_size'];
                          $button = get_sub_field('buttons');
-                         $text_center = $total_blocks == 1 ? 'text-center' : '';
+                         $text_align = get_sub_field('text_align');
                          $sm_order = $total_blocks > 0 ? 'order-sm-only-2' : '';
                          ?>
-                         <div class="<?php echo $column_size_mobile . ' ' . $column_size_desktop . ' ' . $sm_order . ' ' . $text_center?> align-self-center">
+                         <div class="<?php echo $column_size_mobile . ' ' . $column_size_desktop . ' ' . $sm_order . ' ' . $text_align?> align-self-center">
                               <div class="block <?php echo $type ?>-block">
                                     <?php if(!empty($heading_group['heading_text'])): ?>
                                         <?php if($heading_size == 'h1'): ?>
