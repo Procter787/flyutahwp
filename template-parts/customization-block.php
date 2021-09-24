@@ -72,10 +72,10 @@
                          $paragraph = get_sub_field('paragraph');
                          $heading_size = $heading_group['heading_size'];
                          $button = get_sub_field('buttons');
-                         $text_align = get_sub_field('text_align');
+                         $text_align = get_sub_field('text_align') ? 'text-' . get_sub_field('text_align') : '';
                          $sm_order = $total_blocks > 0 ? 'order-sm-only-2' : '';
                          ?>
-                         <div class="<?php echo $column_size_mobile . ' ' . $column_size_desktop . ' ' . $sm_order . ' ' . $text_align?> align-self-center">
+                         <div class="<?php echo $column_size_mobile . ' ' . $column_size_desktop . ' ' . $sm_order . ' ' . $text_align ?> align-self-center">
                               <div class="block <?php echo $type ?>-block">
                                     <?php if(!empty($heading_group['heading_text'])): ?>
                                         <?php if($heading_size == 'h1'): ?>
@@ -108,10 +108,14 @@
                          $sm_order = $total_blocks > 0 ? 'order-sm-only-1' : ''?>
                          <div class="<?php echo $column_size_mobile . ' ' . $column_size_desktop . ' ' . $sm_order ?> d-flex justify-content-center align-self-center mb-10 mb-lg-0">
                              <div class="block <?php echo $type ?>-block">
-                                 <?php $image = get_sub_field('image_gif'); ?> 
-                                 <?php if(!empty($image)): ?>   
-                                     <img class="" src="<?php echo $image['url'] ?>" loading="lazy" alt="<?php echo $image['alt'] ?: 'frazil' ?>">
-                                 <?php endif; ?>
+                                  <?php $image = get_sub_field('image_gif'); ?> 
+                                  <?php if(!empty($image)): ?>
+                                       <picture>
+                                            <source media="(max-width:<?php echo BP_MEDIUM ?>px)" srcset="<?php echo $image['sizes']['medium_large'] ?>">
+                                            <source media="(max-width:<?php echo BP_LARGE ?>px)" srcset="<?php echo $image['sizes']['large'] ?>">
+                                            <img src="<?php echo $image['url'] ?>" alt="selah">
+                                       </picture>    
+                                  <?php endif; ?>
                              </div>
                          </div>
                      <?php endif ?>
