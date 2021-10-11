@@ -155,7 +155,7 @@ class epic_acf_field_custom_button extends acf_field {
 	        </div>
 			
 			<?php // Button Open in New Window ?>
-			<div class="acf-field acf-field-true-false show-external-link show-internal-link conditional acf-<?php echo str_replace('_', '-', $field['key']) ?> -r0" style="width: 50%; min-height: 85px;"  data-width="50" data-name="open_in_a_new_window" data-type="true_false" data-key="open_in_a_new_window">
+			<div class="acf-field acf-field-true-false show-external-link show-internal-link conditional acf-<?php echo str_replace('_', '-', $field['key']); echo ($field_value['button_type'] == 'open_modal' ? ' acf-hidden' : ''); ?> -r0" style="width: 50%; min-height: 85px;"  data-width="50" data-name="open_in_a_new_window" data-type="true_false" data-key="open_in_a_new_window">
 				<div class="acf-label">
 					<label for="acf-<?php echo $field['name'] ?>">Open in a New Window?</label>
 				</div>
@@ -222,7 +222,7 @@ class epic_acf_field_custom_button extends acf_field {
 	        
 	                
 	        <?php // Button Internal Link ?>
-			<div class="acf-field conditional show-internal-link acf-field-page-link acf-<?php echo str_replace('_', '-', $field['key']) ?>" style="width: 33%; min-height: 134px;" data-name="internal_link" data-type="page_link" data-key="<?php echo $field['key'] ?>" data-width="33" >
+			<div class="acf-field conditional show-internal-link acf-field-page-link acf-<?php echo str_replace('_', '-', $field['key']); echo ($field_value['button_type'] !== 'internal_link' ? ' acf-hidden' : ''); ?>" style="width: 33%; min-height: 134px;" data-name="internal_link" data-type="page_link" data-key="<?php echo $field['key'] ?>" data-width="33" >
 	            <div class="acf-label">
 	            <label for="<?php echo $field['id'].'-internal-link' ?>">Internal Link</label></div>
 	            <div class="acf-input">
@@ -236,7 +236,7 @@ class epic_acf_field_custom_button extends acf_field {
 	        </div> 
 	        
 			<?php // Button External Link ?>
-	        <div class="acf-field conditional show-external-link acf-field-page-link acf-<?php echo str_replace('_', '-', $field['key']) ?>" style="width: 33%; min-height: 134px;" data-name="external_link" data-type="url" data-key="external_link" data-width="33" >
+	        <div class="acf-field conditional show-external-link acf-field-page-link acf-<?php echo str_replace('_', '-', $field['key']); echo ($field_value['button_type'] !== 'external_link' ? ' acf-hidden' : ''); ?>" style="width: 33%; min-height: 134px;" data-name="external_link" data-type="url" data-key="external_link" data-width="33" >
 	            <div class="acf-label">
 	            <label for="<?php echo $field['id'].'-external-link' ?>">External Link</label></div>    
 				<div class="acf-input">
@@ -249,7 +249,7 @@ class epic_acf_field_custom_button extends acf_field {
 	        </div>
 			
 			<?php // Button Open Modal Link ?>
-	        <div class="acf-field conditional show-open-modal acf-field-page-link acf-<?php echo str_replace('_', '-', $field['key']) ?>" style="width: 33%; min-height: 134px;" data-name="modal_id" data-type="text" data-key="modal_id" data-width="33" >
+	        <div class="acf-field conditional show-open-modal acf-field-page-link acf-<?php echo str_replace('_', '-', $field['key']); echo ($field_value['button_type'] !== 'open_modal' ? ' acf-hidden' : ''); ?>" style="width: 33%; min-height: 134px;" data-name="modal_id" data-type="text" data-key="modal_id" data-width="33" >
 	            <div class="acf-label">
 	            <label for="<?php echo $field['id'].'-modal-id' ?>">Modal ID</label></div>
 				<div class="acf-input">
