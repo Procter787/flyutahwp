@@ -79,7 +79,7 @@
                               <div class="block <?php echo $type ?>-block">
                                     <?php if(!empty($heading_group['heading_text'])): ?>
                                         <?php if($heading_size == 'h1'): ?>
-                                            <h1 class="heading mb-10 mb-md-20 <?php echo $heading_size ?>"><?php $heading_group['heading_text']; ?></h1>
+                                            <h1 class="heading mb-10 mb-md-20 <?php echo $heading_size ?>"><?php echo $heading_group['heading_text']; ?></h1>
                                         <?php else: ?>
                                             <?php $heading_size = $heading_size == 'h1-fake' ? 'h1' : $heading_size; ?>
                                             <div class="heading mb-10 mb-md-20  <?php echo $heading_size ?>"><?php echo $heading_group['heading_text']?></div>
